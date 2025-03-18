@@ -4,6 +4,7 @@ import { artworksService } from '@/services/ArtworksService.js';
 import { logger } from '@/utils/Logger.js';
 import { Pop } from '@/utils/Pop.js';
 import { computed, onMounted } from 'vue';
+import ArtworkCard from '@/components/ArtworkCard.vue';
 
 onMounted(() => {
   logger.log('HomePage is mounted')
@@ -26,12 +27,8 @@ async function getAllArtworks() {
 <template>
   <section class="container">
     <div class="row">
-      <div class="col-md-3">
-        <div>
-          <div v-for="artwork in artworks" :key="artwork.id">
-            {{ artwork }}
-          </div>
-        </div>
+      <div v-for="artwork in artworks" :key="artwork.id">
+        <ArtworkCard :artworkProp="artwork" />
       </div>
     </div>
   </section>
