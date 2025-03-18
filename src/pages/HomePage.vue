@@ -5,6 +5,7 @@ import { logger } from '@/utils/Logger.js';
 import { Pop } from '@/utils/Pop.js';
 import { computed, onMounted } from 'vue';
 import ArtworkCard from '@/components/ArtworkCard.vue';
+import PageNavigation from '@/components/PageNavigation.vue';
 
 onMounted(() => {
   logger.log('HomePage is mounted')
@@ -27,9 +28,11 @@ async function getAllArtworks() {
 <template>
   <section class="container">
     <div class="row">
+      <PageNavigation />
       <div v-for="artwork in artworks" :key="artwork.id" class="col-md-3">
         <ArtworkCard :artworkProp="artwork" />
       </div>
+      <PageNavigation />
     </div>
   </section>
 </template>

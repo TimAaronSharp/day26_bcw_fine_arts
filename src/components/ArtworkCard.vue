@@ -11,7 +11,8 @@ defineProps({
 
 <template>
   <div>
-    <img :src="artworkProp.imgUrls.regular" alt="" class="img-fluid mt-2">
+    <img :src="artworkProp.imgUrls.regular" :alt="artworkProp.altDescription" class="img-fluid mt-2">
+    <!-- <p>{{ artworkProp.slug }}</p> -->
   </div>
 </template>
 
