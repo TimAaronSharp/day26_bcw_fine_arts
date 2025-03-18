@@ -1,5 +1,6 @@
 <script setup>
 import { AppState } from '@/AppState.js';
+import { artworksService } from '@/services/ArtworksService.js';
 import { logger } from '@/utils/Logger.js';
 import { Pop } from '@/utils/Pop.js';
 import { computed } from 'vue';
@@ -10,7 +11,8 @@ const totalPages = computed(() => AppState.totalPages)
 
 async function changePage(pageNumber) {
   try {
-    logger.log(pageNumber)
+    // logger.log(pageNumber)
+    await artworksService.changePage(pageNumber)
   }
   catch (error) {
     Pop.error(error);

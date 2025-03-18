@@ -9,6 +9,13 @@ class ArtworksService{
     const res = await artworkApi.get('api/artworks')
     this.handleResponse(res)
   }
+  async changePage(pageNumber) {
+    const res = await artworkApi.get(`api/artworks?page=${pageNumber}`)
+    this.handleResponse(res)
+    // AppState.currentPage = pageNumber
+    // logger.log(AppState.currentPage)
+    // logger.log(res.data)
+  }
   async handleResponse(res){
     const receivedArtworks = res.data.artworks.map(artwork => new Artwork(artwork))
     AppState.artworks = receivedArtworks
