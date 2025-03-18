@@ -15,7 +15,7 @@ class ArtworksService{
     AppState.currentPage = res.data.page
     AppState.totalPages = res.data.pages
     // logger.log(res.data)
-    // logger.log(receivedArtworks)
+    logger.log(receivedArtworks)
     // logger.log(AppState.currentPage)
     // logger.log(AppState.totalPages)
     

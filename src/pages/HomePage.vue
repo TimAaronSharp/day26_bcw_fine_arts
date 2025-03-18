@@ -27,7 +27,7 @@ async function getAllArtworks() {
 <template>
   <section class="container">
     <div class="row">
-      <div v-for="artwork in artworks" :key="artwork.id">
+      <div v-for="artwork in artworks" :key="artwork.id" class="col-md-3">
         <ArtworkCard :artworkProp="artwork" />
       </div>
     </div>

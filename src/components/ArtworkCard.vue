@@ -10,10 +10,8 @@ defineProps({
 
 
 <template>
-  <div class="col-md-3">
-    <div>
-      {{ artworkProp }}
-    </div>
+  <div>
+    <img :src="artworkProp.imgUrls.regular" alt="" class="img-fluid mt-2">
   </div>
 </template>
 
